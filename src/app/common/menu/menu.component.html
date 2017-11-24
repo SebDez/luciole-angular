@@ -4,26 +4,28 @@
     <span class="menu-title" routerLink="/">Luciole - Back Office</span>
 
     <!-- NAVBAR -->
-    <button mat-button routerLink="/">Home</button>
-    <button mat-button routerLink="/gv">Game Versions</button>
-    <button mat-button [matMenuTriggerFor]="config">Configuration</button>
-    <mat-menu #config="matMenu">
-      <button mat-menu-item routerLink="/config/xx/kingdom">Kingdom</button>
-      <button mat-menu-item routerLink="/config/xx/buildings">Buildings</button>
-    </mat-menu>
+    <div *ngIf="user">
+      <button mat-button routerLink="/">Home</button>
+      <button mat-button routerLink="/gv">Game Versions</button>
+      <button mat-button [matMenuTriggerFor]="config">Configuration</button>
+      <mat-menu #config="matMenu">
+        <button mat-menu-item routerLink="/config/xx/kingdom">Kingdom</button>
+        <button mat-menu-item routerLink="/config/xx/buildings">Buildings</button>
+      </mat-menu>
+      <button mat-button routerLink="/unavailable">Users</button>
+    </div>
 
     <!-- USER MENU -->
-    <button mat-button routerLink="/unavailable">Users</button>
     <span class="menu-spacer"></span>
-    <span>
-      <span>Jean-Claude</span>
+    <div *ngIf="user">
+      <span>{{user.username}} - {{user.role}}</span>
       <button mat-icon-button [matMenuTriggerFor]="menu">
         <mat-icon>account_circle</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
         <button mat-menu-item (click)="logout($event)">Log out</button>
       </mat-menu>
-    </span>
+    </div>
 
   </mat-toolbar-row>
 </mat-toolbar>

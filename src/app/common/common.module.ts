@@ -12,6 +12,11 @@ import { UnavailableComponent } from './unavailable/unavailable.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule, MatMenuModule, MatIconModule, MatToolbarModule, MatCardModule } from '@angular/material';
 
+// SERVICES
+import { MockHelperService } from './services/mock-helper.service';
+import { LuLocalStorageService } from './services/lu-local-storage.service';
+import { AuthInterceptorService } from './services/auth-interceptor.service';
+
 /**
  * The module containing all common elements
  * @export
@@ -31,6 +36,11 @@ import { MatButtonModule, MatCheckboxModule, MatMenuModule, MatIconModule, MatTo
   exports: [
     MenuComponent,
     UnavailableComponent
+  ],
+  providers: [
+    MockHelperService,
+    LuLocalStorageService,
+    AuthInterceptorService
   ]
 })
 

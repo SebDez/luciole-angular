@@ -10,17 +10,18 @@
 
 # V0.1.0 : Authentication
 
- * Login | auth | **TODO**
+ * Login | auth | **DONE**
   * Login form  | **DONE**
-  * Remember me  | **TODO**
-  * Interceptors | **TODO**
-  * Get User data | **TODO**
+  * Remember me  | **DONE**
+  * Interceptors | **DONE**
+  * Get User data | **DONE**
  * Router | routing | **DONE**
   * Home page logged off| **DONE**
   * Home page logged in | **DONE**
   * Navbar | **DONE**
   * Gv page | **DONE**
   * Config page | **DONE**
+ * Unit tests | first_unit_tests | **TODO**
 
 # V0.2.0 : Game versions
  * Get All | get_all | **TODO**

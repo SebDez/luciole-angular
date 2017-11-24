@@ -4,40 +4,51 @@ import { LoginPageComponent } from './home/login-page/login-page.component';
 import { GameVersionsPageComponent } from './game-versions/game-versions-page/game-versions-page.component';
 import { ConfigurationPageComponent } from './configuration/configuration-page/configuration-page.component';
 import { UnavailableComponent } from './common/unavailable/unavailable.component';
+import { LoggedInGuard } from './home/guards/logged-in.guard';
 
 export const ROUTES: Routes = [
-    { path: '', component: HomePageComponent },
     { path: 'unavailable', component: UnavailableComponent },
     { path: 'login', component: LoginPageComponent },
     {
-        path: 'gv',
+        path: '',
         children: [
-            { path: '', component: GameVersionsPageComponent },
-            { path: ':gvId', component: GameVersionsPageComponent }
-        ]
-    },
-    {
-        path: 'config',
-        children: [
+            { path: '', component: HomePageComponent },
             {
-                path: ':gvId',
-                component: ConfigurationPageComponent,
+                path: 'gv',
                 children: [
-                    { path: '', pathMatch: 'full', redirectTo: 'resume' },
+                    { path: '', component: GameVersionsPageComponent },
+                    { path: ':gvId', component: GameVersionsPageComponent }
+                ]
+            },
+            {
+                path: 'config',
+                children: [
                     {
-                        path: 'resume',
-                        component: ConfigurationPageComponent
-                    },
-                    {
-                        path: 'kingdom',
-                        component: ConfigurationPageComponent
-                    },
-                    {
-                        path: 'buildings',
-                        component: ConfigurationPageComponent
+                        path: ':gvId',
+                        component: ConfigurationPageComponent,
+                        children: [
+                            { path: '', pathMatch: 'full', redirectTo: 'resume' },
+                            {
+                                path: 'resume',
+                                component: ConfigurationPageComponent
+                            },
+                            {
+                                path: 'kingdom',
+                                component: ConfigurationPageComponent
+                            },
+                            {
+                                path: 'buildings',
+                                component: ConfigurationPageComponent
+                            }
+                        ]
                     }
                 ]
             }
-        ]
+        ],
+        canActivate: [LoggedInGuard]
+    },
+    {
+        path: '**',
+        component: UnavailableComponent
     }
 ];
