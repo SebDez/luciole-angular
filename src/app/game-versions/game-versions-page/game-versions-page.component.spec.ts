@@ -1,22 +1,22 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomePageComponent } from './home-page.component';
+import { GameVersionsPageComponent } from './game-versions-page.component';
 import { LuCommonModule } from '../../common/common.module';
 
-describe('HomePageComponent', () => {
-  let component: HomePageComponent;
-  let fixture: ComponentFixture<HomePageComponent>;
+describe('GameVersionsPageComponent', () => {
+  let component: GameVersionsPageComponent;
+  let fixture: ComponentFixture<GameVersionsPageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [HomePageComponent],
+      declarations: [GameVersionsPageComponent],
       imports: [LuCommonModule]
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomePageComponent);
+    fixture = TestBed.createComponent(GameVersionsPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

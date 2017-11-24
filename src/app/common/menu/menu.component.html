@@ -1,15 +1,29 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span class="menu-title">Luciole - Back Office</span>
-    <button mat-button>Home</button>
-    <button mat-button>Game Versions</button>
-    <button mat-button [matMenuTriggerFor]="config">Configs</button>
+    <!-- TITLE -->
+    <span class="menu-title" routerLink="/">Luciole - Back Office</span>
+
+    <!-- NAVBAR -->
+    <button mat-button routerLink="/">Home</button>
+    <button mat-button routerLink="/gv">Game Versions</button>
+    <button mat-button [matMenuTriggerFor]="config">Configuration</button>
     <mat-menu #config="matMenu">
-      <button mat-menu-item>Kingdom</button>
-      <button mat-menu-item>Buildings</button>
+      <button mat-menu-item routerLink="/config/xx/kingdom">Kingdom</button>
+      <button mat-menu-item routerLink="/config/xx/buildings">Buildings</button>
     </mat-menu>
-    <button mat-button>Users</button>
+
+    <!-- USER MENU -->
+    <button mat-button routerLink="/unavailable">Users</button>
     <span class="menu-spacer"></span>
-    <mat-icon class="menu-icon">account_circle</mat-icon>
+    <span>
+      <span>Jean-Claude</span>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="logout($event)">Log out</button>
+      </mat-menu>
+    </span>
+
   </mat-toolbar-row>
 </mat-toolbar>

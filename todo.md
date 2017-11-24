@@ -15,12 +15,12 @@
   * Remember me  | **TODO**
   * Interceptors | **TODO**
   * Get User data | **TODO**
- * Router | routing | **IN_PROGRESS**
-  * Home page logged off| **IN_PROGRESS**
-  * Home page logged in | **IN_PROGRESS**
-  * Navbar | **IN_PROGRESS**
-  * Gv page | **IN_PROGRESS**
-  * Config page | **IN_PROGRESS**
+ * Router | routing | **DONE**
+  * Home page logged off| **DONE**
+  * Home page logged in | **DONE**
+  * Navbar | **DONE**
+  * Gv page | **DONE**
+  * Config page | **DONE**
 
 # V0.2.0 : Game versions
  * Get All | get_all | **TODO**
