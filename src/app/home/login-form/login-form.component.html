@@ -1,0 +1,37 @@
+<!-- Authentication failed message -->
+<mat-card class="login-error-card" *ngIf="authenticationFailed">
+  <mat-card-header>
+    <div mat-card-avatar>
+      <mat-icon>clear</mat-icon>
+    </div>
+    <mat-card-title>The login or the password is wrong.</mat-card-title>
+    <mat-card-subtitle>Please try again.</mat-card-subtitle>
+  </mat-card-header>
+</mat-card>
+
+<form class="login-form" (ngSubmit)="authenticate()" [formGroup]="loginForm">
+  <!-- Login -->
+  <mat-form-field class="login-input">
+    <input matInput placeholder="Email" [formControl]="loginCtrl">
+    <mat-error *ngIf="loginCtrl.hasError('email') && !loginCtrl.hasError('required')">
+      Please enter a valid email address
+    </mat-error>
+    <mat-error *ngIf="loginCtrl.hasError('required')">
+      Email is
+      <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Password -->
+  <mat-form-field class="login-input">
+    <input type="password" matInput placeholder="Password" [formControl]="passwordCtrl">
+    <mat-error *ngIf="passwordCtrl.hasError('required')">
+      Password is
+      <strong>
+        required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Button -->
+  <button type="submit" mat-raised-button color="primary" [disabled]="loginForm.invalid">Login</button>
+</form>

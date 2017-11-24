@@ -1,6 +1,6 @@
 {
   "name": "luciole-backoffice",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -8,20 +8,28 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "docs": "compodoc -p src/tsconfig.app.json",
+    "test:cover": "ng test --watch=false --code-coverage",
+    "checkall": "ng lint && npm run test:cover && npm run docs"
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^5.0.0",
+    "@angular/animations": "^5.0.3",
+    "@angular/cdk": "^5.0.0-rc.1",
     "@angular/common": "^5.0.0",
     "@angular/compiler": "^5.0.0",
     "@angular/core": "^5.0.0",
     "@angular/forms": "^5.0.0",
     "@angular/http": "^5.0.0",
+    "@angular/material": "^5.0.0-rc.1",
     "@angular/platform-browser": "^5.0.0",
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@angular/router": "^5.0.0",
+    "bootstrap": "4.0.0-alpha.6",
     "core-js": "^2.4.1",
+    "font-awesome": "4.7.0",
+    "hammerjs": "^2.0.8",
     "rxjs": "^5.5.2",
     "zone.js": "^0.8.14"
   },
