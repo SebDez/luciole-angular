@@ -9,7 +9,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "test:cover": "ng test --watch=false --code-coverage"
+    "docs": "compodoc -p src/tsconfig.app.json",
+    "test:cover": "ng test --watch=false --code-coverage",
+    "checkall": "ng lint && npm run test:cover && npm run docs"
   },
   "private": true,
   "dependencies": {
